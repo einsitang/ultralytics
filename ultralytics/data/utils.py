@@ -1,7 +1,7 @@
 # Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
 
 from __future__ import annotations
-
+import traceback
 import json
 import os
 import random
@@ -249,7 +249,7 @@ def verify_image_label(args: tuple) -> list:
     except Exception as e:
         nc = 1
         msg = f"{prefix}{im_file}: ignoring corrupt image/label: {e}"
-        print("二:",e)
+        traceback.print_exc()
         return [None, None, None, None, None, nm, nf, ne, nc, msg]
 
 
