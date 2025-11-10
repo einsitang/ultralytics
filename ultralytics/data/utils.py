@@ -176,6 +176,7 @@ def verify_image(args: tuple) -> tuple:
     except Exception as e:
         nc = 1
         msg = f"{prefix}{im_file}: ignoring corrupt image/label: {e}"
+        print("一:",e)
     return (im_file, cls), nf, nc, msg
 
 
@@ -248,6 +249,7 @@ def verify_image_label(args: tuple) -> list:
     except Exception as e:
         nc = 1
         msg = f"{prefix}{im_file}: ignoring corrupt image/label: {e}"
+        print("二:",e)
         return [None, None, None, None, None, nm, nf, ne, nc, msg]
 
 
